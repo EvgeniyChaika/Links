@@ -1,0 +1,15 @@
+<h2>VKontakte</h2>
+<div>
+    <label>Response : </label>
+    <input type="text" ng-model="text" placeholder="Enter a response here">
+    <button ng-click="parseText(text)">Search</button>
+    <hr>
+</div>
+<div>
+    <p>First name: {{result.first_name}}</p>
+    <p>Last name: {{result.last_name}}</p>
+    <p>Id: {{result.uid}}</p>
+    <p>Status: {{result.status}}</p>
+    <p>Avatar :</p>
+    <img ng-src="{{result.photo_max_orig}}"/>
+</div>

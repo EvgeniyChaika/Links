@@ -1,0 +1,100 @@
+<h2>FORMS</h2>
+
+<button ng-click="getForm()">GetForm!</button>
+<div ng-controller="formsController">
+    <form name="form" ng-submit="onSubmit()">
+        <div class="block" ng-repeat="d in types.questions">
+            <div ng-switch="d.questionTypeId">
+                <div ng-switch-when="0">
+                    <div ng-switch="d.validations[0].validationTypeId">
+                        <div ng-switch-when="0">
+                            <div ng-switch="d.headerText">
+                                <div ng-switch-when="username">
+
+                                    <div>{{d.headerText}}:</div>
+                                    <label class="username">
+                                        <input type="text" name="username" ng-model="d.username"
+                                               ng-minlength='d.validations[0].min'
+                                               ng-maxlength='d.validations[0].max' ng-required='!email'/>
+                                    </label>
+
+                                    <div class='error' ng-show='form.username.$invalid'>
+                                        Username is invalid:
+                                        <div ng-show='form.username.$error.minlength'>&nbsp;&nbsp; - too short</div>
+                                        <div ng-show='form.username.$error.maxlength'>&nbsp;&nbsp; - too long</div>
+                                        <div ng-show='form.username.$error.required'>&nbsp;&nbsp; - required</div>
+                                    </div>
+                                </div>
+                                <div ng-switch-when="email">
+                                    <div>{{d.headerText}}:</div>
+                                    <label class="email">
+                                        <input type="text" name="email" ng-model="d.email"
+
+                                               ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i"
+                                               ng-required='!username'/>
+                                    </label>
+
+                                    <div class='error' ng-show='form.$dirty && form.email.$invalid'>
+                                        <div ng-show='form.email.$error.required'>Email is required.</div>
+                                        <div ng-show='form.email.$error.pattern'>Email must be valid.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div ng-switch-when="1">
+                            <div>{{d.headerText}}:</div>
+                            <label>
+                                <input type="text" ng-model="d.firstname" name="firstname"
+                                       ng-pattern="/^[a-zA-Z]*$/" required>
+                            </label>
+
+                            <div class='error' ng-show='form.firstname.$invalid'>Firstname is invalid</div>
+                        </div>
+                        <div ng-switch-when="2">
+                            <div>{{d.headerText}}:</div>
+                            <label>
+                                <input type="text" name="number" ng-model="d.number" ng-minlength='d.validations[0].min'
+                                       ng-maxlength='d.validations[0].max' ng-pattern="/^[1-9]*$/">
+                            </label>
+
+                            <div class='error' ng-show='form.$dirty && form.number.$invalid'>Number is invalid.</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div ng-switch-when="1">
+                    <div>{{d.headerText}}:</div>
+                    <label ng-repeat="t in d.responseOptions">
+                        <input type="checkbox" name="checkbox" ng-model="d[t]" value="{{t}}">
+                        <span>{{t}}</span>
+                    </label>
+
+                </div>
+                <div ng-switch-when="2">
+                    <div>{{d.headerText}}:</div>
+                    <label ng-repeat="t in d.responseOptions">
+                        <input type="radio" name="gender" ng-model="d[t]" value="{{t}}">
+                        <span>{{t}}</span>
+                    </label>
+                </div>
+                <div ng-switch-when="3">
+                    <div>{{d.headerText}}:</div>
+                    <label>
+                        <select ng-model="d.question">
+                            <!--<option>&#45;&#45;select a question&#45;&#45;</option>-->
+                            <option ng-repeat="t in d.responseOptions"
+                                    name="question">{{t}}
+                            </option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        <div class="block">
+            <input ng-disabled='form.$invalid' type="submit" value="Send form"/>
+            <input type="reset" value="Clear form"/>
+        </div>
+    </form>
+</div>

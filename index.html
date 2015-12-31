@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="helloApp">
+<head>
+    <!--<base ng-href="/"/>-->
+    <meta charset="UTF-8">
+    <title>HelloWorld</title>
+    <style type="text/css">
+        .block {
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+        .error {
+            color: #c31;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+    <script src="helloApp.js"></script>
+
+</head>
+<body>
+<h2>
+<a href="#/home">Home</a>
+<a href="#/hello-world">HelloWorld</a>
+<a href="#/data">Data</a>
+<a href="#/vk">VKontakte</a>
+<a href="#/forms">Forms</a>
+</h2>
+<hr>
+
+<div ng-view></div>
+
+</body>
+</html>

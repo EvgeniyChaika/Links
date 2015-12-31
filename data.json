@@ -1,0 +1,59 @@
+[
+  {
+    "isOnThePage": false,
+    "isVisible": true,
+    "hasRedBorder": true,
+    "elementType": 0,
+    "text": "text item 0"
+  },
+  {
+    "isOnThePage": true,
+    "isVisible": false,
+    "hasRedBorder": true,
+    "elementType": 0,
+    "text": "text item 1"
+  },
+  {
+    "isOnThePage": true,
+    "isVisible": true,
+    "hasRedBorder": false,
+    "elementType": 0,
+    "text": "text item 2"
+  },
+  {
+    "isOnThePage": true,
+    "isVisible": true,
+    "hasRedBorder": true,
+    "elementType": 0,
+    "text": "text item 3"
+  },
+  {
+    "isOnThePage": true,
+    "isVisible": true,
+    "hasRedBorder": false,
+    "elementType": 1,
+    "text": "anchor item 0",
+    "url": "http://www.my-awesome-web-site.com"
+  },
+  {
+    "isOnThePage": true,
+    "isVisible": true,
+    "hasRedBorder": false,
+    "elementType": 2,
+    "src": "http://logiassist.de/documents/10180/28907/market_windows/da82d0b0-187a-49cb-b308-93ac6e4ecb15?t=1386099069523"
+  },
+  {
+    "isOnThePage": false,
+    "isVisible": true,
+    "hasRedBorder": false,
+    "elementType": 12,
+    "text": "item 0"
+  },
+  {
+    "isOnThePage": true,
+    "isVisible": true,
+    "hasRedBorder": false,
+    "elementType": 13,
+    "text": "item 1"
+  }
+]

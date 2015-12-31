@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "headerText": "username",
+      "questionTypeId": 0,
+      "validations": [
+        {
+          "validationTypeId": 0,
+          "min": 3,
+          "max": 5
+        }
+      ]
+    }, {
+      "headerText": "first name",
+      "questionTypeId": 0,
+      "validations": [
+        {
+          "validationTypeId": 1
+        }
+      ]
+    }, {
+      "headerText": "phone number",
+      "questionTypeId": 0,
+      "validations": [
+        {
+          "validationTypeId": 2,
+          "min": 9,
+          "max": 9
+        }
+      ]
+    }, {
+      "headerText": "email",
+      "questionTypeId": 0,
+      "validations": [
+        {
+          "validationTypeId": 0
+
+        }
+      ]
+    }, {
+      "headerText": "programming language",
+      "questionTypeId": 1,
+      "responseOptions": [ "Java", "JS", "C", "C++", "Ruby", "Python", "1С Язык" ]
+    }, {
+      "headerText": "gender",
+      "questionTypeId": 2,
+      "responseOptions": [ "male", "female" ]
+    }, {
+      "headerText": "secret question",
+      "questionTypeId": 3,
+      "responseOptions": [ "Секретный вопрос 1", "Секретный вопрос 2" ]
+    }
+  ]
+}

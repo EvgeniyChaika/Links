@@ -1,0 +1,17 @@
+<h2>DATA</h2>
+<div>
+    <ol>
+
+        <li ng-repeat="d in data" ng-show="d.isVisible" ng-if="d.isOnThePage">
+            <div ng-switch="d.elementType">
+                <div ng-switch-when="0" ng-dblclick="hideText(d)" ng-focus="">{{d.text}}</div>
+                <a ng-switch-when="1" ng-href="{{d.url}}">{{d.text}}</a>
+                <img ng-switch-when="2" ng-src="{{d.src}}"/>
+
+                <div ng-switch-default>неопределенный тип элемента
+                    {{d.elementTypeId}} с текстом {{d.text}}
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>
